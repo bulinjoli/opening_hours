@@ -22,8 +22,7 @@ class OpeningHours(Resource):
             # Transforming list so I can do validation for times
             converted_list = [(key, time["type"], time["value"]) for key in data for time in data[key]]
             validation_time_list = [(converted_list[i - 1][2] >= converted_list[i][2]) for i in range(len(converted_list)) if
-                         converted_list[i][0] == converted_list[i - 1][0] and converted_list[i][1] == "close" and converted_list[i - 1][
-                             1] == "open"]
+                         converted_list[i][0] == converted_list[i - 1][0]]
             # Checking if there are wrong time values
             if True in validation_time_list:
                 abort(400, "Please check your json values, looks like you wrong hours")
