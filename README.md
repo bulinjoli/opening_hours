@@ -7,6 +7,8 @@ to have virtual env and activate it and install requirements from requirements.t
 to run the project you can simply run(inside virtualenv) 
 
 ``` shell
+git clone https://github.com/bulinjoli/opening_hours.git
+cd openinghours
 virtualenv openinghours
 source openinghours/bin/activate
 pip3 install -r requirements.txt
